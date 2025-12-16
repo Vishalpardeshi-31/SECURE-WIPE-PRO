@@ -1,0 +1,117 @@
+{
+  "name": "Device",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Device name/model"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "laptop",
+        "desktop",
+        "smartphone",
+        "tablet",
+        "external_drive",
+        "usb",
+        "ssd",
+        "hdd"
+      ],
+      "description": "Type of device"
+    },
+    "os_type": {
+      "type": "string",
+      "enum": [
+        "windows",
+        "macos",
+        "linux",
+        "android",
+        "ios",
+        "unknown"
+      ],
+      "description": "Operating system of the device"
+    },
+    "capacity": {
+      "type": "string",
+      "description": "Storage capacity (e.g., 256GB, 1TB)"
+    },
+    "serial_number": {
+      "type": "string",
+      "description": "Device serial number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "connected",
+        "wiping",
+        "completed",
+        "error",
+        "disconnected"
+      ],
+      "default": "connected",
+      "description": "Current device status"
+    },
+    "wipe_method": {
+      "type": "string",
+      "enum": [
+        "nist_sp800_88_clear",
+        "nist_sp800_88_purge",
+        "dod_3_pass",
+        "secure_erase",
+        "crypto_erase"
+      ],
+      "description": "Wiping method used"
+    },
+    "wipe_level": {
+      "type": "string",
+      "enum": [
+        "quick",
+        "standard",
+        "secure",
+        "military"
+      ],
+      "description": "Level of wiping security"
+    },
+    "supports_hpa_dco": {
+      "type": "boolean",
+      "default": false,
+      "description": "Device supports HPA/DCO area wiping"
+    },
+    "is_ssd": {
+      "type": "boolean",
+      "default": false,
+      "description": "Device is an SSD (affects wiping method)"
+    },
+    "wipe_started": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When wiping started"
+    },
+    "wipe_completed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When wiping completed"
+    },
+    "progress": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Wipe progress percentage"
+    },
+    "certificate_id": {
+      "type": "string",
+      "description": "Generated certificate ID"
+    },
+    "connection_range": {
+      "type": "boolean",
+      "default": true,
+      "description": "Device is within connection range"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "capacity"
+  ]
+}

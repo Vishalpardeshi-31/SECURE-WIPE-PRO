@@ -1,0 +1,55 @@
+{
+  "name": "ConnectedDevice",
+  "type": "object",
+  "properties": {
+    "device_id": {
+      "type": "string",
+      "description": "Unique device identifier from system"
+    },
+    "connection_type": {
+      "type": "string",
+      "enum": [
+        "bluetooth",
+        "usb",
+        "serial"
+      ],
+      "description": "How the device is connected"
+    },
+    "device_name": {
+      "type": "string",
+      "description": "Device name from system"
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Device manufacturer"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "Product ID"
+    },
+    "vendor_id": {
+      "type": "string",
+      "description": "Vendor ID"
+    },
+    "connection_status": {
+      "type": "string",
+      "enum": [
+        "connected",
+        "disconnected",
+        "pairing",
+        "error"
+      ],
+      "description": "Current connection status"
+    },
+    "last_connected": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last connection timestamp"
+    }
+  },
+  "required": [
+    "device_id",
+    "connection_type",
+    "device_name"
+  ]
+}

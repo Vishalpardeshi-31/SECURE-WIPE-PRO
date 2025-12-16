@@ -1,0 +1,31 @@
+{
+  "name": "UserLogin",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the logged-in user"
+    },
+    "user_full_name": {
+      "type": "string",
+      "description": "Full name of the logged-in user"
+    },
+    "login_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The exact time of the login"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address of the user at login"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "Browser and OS information of the user"
+    }
+  },
+  "required": [
+    "user_email",
+    "login_timestamp"
+  ]
+}

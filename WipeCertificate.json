@@ -1,0 +1,72 @@
+{
+  "name": "WipeCertificate",
+  "type": "object",
+  "properties": {
+    "certificate_id": {
+      "type": "string",
+      "description": "Unique certificate identifier"
+    },
+    "device_id": {
+      "type": "string",
+      "description": "Associated device ID"
+    },
+    "device_name": {
+      "type": "string",
+      "description": "Device name/model"
+    },
+    "device_serial": {
+      "type": "string",
+      "description": "Device serial number"
+    },
+    "wipe_method": {
+      "type": "string",
+      "description": "Wiping method used"
+    },
+    "compliance_standard": {
+      "type": "string",
+      "enum": [
+        "NIST_SP800_88",
+        "DoD_5220.22_M",
+        "BSI_M7.14",
+        "CESG_CPA"
+      ],
+      "default": "NIST_SP800_88",
+      "description": "Compliance standard followed"
+    },
+    "verification_hash": {
+      "type": "string",
+      "description": "SHA-256 hash for verification"
+    },
+    "qr_code_data": {
+      "type": "string",
+      "description": "QR code verification data"
+    },
+    "wiped_by_email": {
+      "type": "string",
+      "description": "Email of the technician who performed wipe"
+    },
+    "wiped_by_name": {
+      "type": "string",
+      "description": "Name of technician who performed wipe"
+    },
+    "organization": {
+      "type": "string",
+      "description": "Organization name"
+    },
+    "wipe_duration": {
+      "type": "number",
+      "description": "Duration of wipe in minutes"
+    },
+    "passes_completed": {
+      "type": "number",
+      "description": "Number of wipe passes completed"
+    }
+  },
+  "required": [
+    "certificate_id",
+    "device_id",
+    "device_name",
+    "wipe_method",
+    "verification_hash"
+  ]
+}

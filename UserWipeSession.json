@@ -1,0 +1,52 @@
+{
+  "name": "UserWipeSession",
+  "type": "object",
+  "properties": {
+    "device_id": {
+      "type": "string",
+      "description": "Associated device ID"
+    },
+    "wipe_type": {
+      "type": "string",
+      "enum": [
+        "full_device",
+        "partial_files",
+        "free_space"
+      ],
+      "description": "Type of wipe performed"
+    },
+    "files_wiped": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of specific files wiped (for partial wipes)"
+    },
+    "wipe_method": {
+      "type": "string",
+      "description": "Method used for wiping"
+    },
+    "verification_hash": {
+      "type": "string",
+      "description": "Cryptographic proof of wipe"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "completed",
+        "failed"
+      ],
+      "description": "Session status"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Time taken for the wipe"
+    }
+  },
+  "required": [
+    "device_id",
+    "wipe_type",
+    "wipe_method"
+  ]
+}
